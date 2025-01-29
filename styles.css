@@ -1,0 +1,364 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #e3f2fd); /* Putih ke biru muda */
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    background: #007BFF;
+    padding: 20px 0;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* PRICELIST */
+section#pricelist {
+    padding: 40px 0;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background: #007BFF;
+    color: white;
+}
+
+/* TESTIMONIALS */
+section#testimonials {
+    padding: 40px 0;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 16px;
+}
+
+.wa-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.wa-link:hover {
+    background-color: #1ebe5d;
+}
+
+/* FOOTER */
+footer {
+    background: #007BFF;
+    padding: 20px;
+    color: white;
+    margin-top: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.buy-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.buy-btn:hover {
+    background-color: #0056b3;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* CONTACT SECTION */
+#contact {
+    background: linear-gradient(to top, #ffffff, #e3f2fd);
+    padding: 40px 0;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#contact h2 {
+    color: #0056b3;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    color: #333;
+    font-size: 16px;
+}
+
+.contact-options {
+    margin-top: 15px;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    background-color: #0056b3;
+}
+
+/* FORM */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+/* SOCIAL MEDIA */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 5px;
+    color: #0056b3;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-media a:hover {
+    color: #007BFF;
+}
+
+/* COPYRIGHT */
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+/* LOGO DI HEADER */
+.logo {
+    width: 120px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Animasi Loading */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.5s ease-out;
+}
+
+/* Spinner dengan border lebih tebal */
+.spinner {
+    width: 70px;
+    height: 70px;
+    border: 10px solid transparent;
+    border-top: 10px solid #42a5f5;
+    border-right: 10px solid #1e88e5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 20px rgba(66, 165, 245, 0.6);
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Teks Loading */
+#loading p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e88e5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Sembunyikan konten utama saat loading */
+#main-content {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+/* Efek Fade-in untuk Elemen */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+/* Efek Fade-in untuk Konten */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Efek Fade-in Bertahap */
+.show-content .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🔹 MODE GELAP */
+.dark-mode {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background: #333;
+}
+
+.dark-mode table {
+    background: #2b2b2b;
+    color: white;
+}
+
+.dark-mode .buy-btn,
+.dark-mode .contact-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.dark-mode .buy-btn:hover,
+.dark-mode .contact-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 🔹 TOMBOL GANTI MODE */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#theme-toggle:hover {
+    background: #0056b3;
+}
