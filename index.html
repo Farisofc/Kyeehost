@@ -8,36 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
- <!-- Animasi Loading -->
-<!-- Tombol Mode Gelap/Terang -->
+
+<!-- Tombol Buat Mode Gelap/Terang -->
 <button id="theme-toggle">🌙 Mode Gelap</button>
 
-<!-- Loading Screen -->
+<!-- Loading -->
 <div id="loading">
     <div class="spinner"></div>
     <p>Memuat halaman...</p>
 </div>
     
-    <header>
-        
-        <div class="container">
-            <img src="logo.jpg" alt="Logo" class="logo">
-            <h1>My Website Store Kyee</h1>
-            <nav>
-                <ul>
-                    <li><a href="#pricelist">Pricelist</a></li>
-                    <li><a href="#testimonials">Testimoni</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <h1>My Website Store Kyee</h1>
+        <nav>
+            <ul>
+                <li><a href="#pricelist">Pricelist</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
+<section id="pricelist">
+    <div class="container">
+        <h1>📦 Daftar Harga Vps & Akun Digital Ocean 📦</h1>
 
-    
-    <section id="pricelist">
-        <div class="container">
-            <h2>📦 Daftar Harga Vps📦</h2>
+        <!-- Halaman 1 -->
+        <div id="page1" class="page">
             <table>
                 <tr>
                     <th>Produk</th>
@@ -47,36 +47,28 @@
                 <tr>
                     <td>Vps Ram 1Gb Core 1</td>
                     <td>Rp 20.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>
+                    <td><button class="buy-btn" onclick="openQRIS('20.000')">Beli Sekarang</button></td>
                 </tr>
                 <tr>
-                    <td>Vps Ram 2 Core 1</td>
+                    <td>Vps Ram 2Gb Core 1</td>
                     <td>Rp 25.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>
+                    <td><button class="buy-btn" onclick="openQRIS('25.000')">Beli Sekarang</button></td>
+                </tr>
+                  <tr>
+                    <td>Vps Ram 4Gb Core 2</td>
+                    <td>Rp 30.000</td>
+                    <td><button class="buy-btn" onclick="openQRIS('30.000')">Beli Sekarang</button></td>
                 </tr>
                 <tr>
-                    <td>Vps Ram 4 Core 2</td>
-                    <td>Rp 40.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>
-                </tr>
-                <tr>
-                    <td>Vps Ram 8 Core 4</td>
+                    <td>Vps Ram 8Gb Core 4</td>
                     <td>Rp 50.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>
+                    <td><button class="buy-btn" onclick="openQRIS('50.000')">Beli Sekarang</button></td>
                 </tr>
-                <tr>
-                    <td>Vps Ram 16 Core 4</td>
-                    <td>Rp 60.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>
-                </tr>   
             </table>
         </div>
-    </section>
-    
-    <section id="pricelist">
-        <img src="Do.jpg" alt="Logo" class="logo">
-        <div class="container">
-            <h2>📦 Daftar Harga Digital Ocean 📦</h2>
+
+        <!-- Halaman 2 -->
+        <div id="page2" class="page" style="display: none;">
             <table>
                 <tr>
                     <th>Produk</th>
@@ -84,67 +76,91 @@
                     <th>Aksi</th>
                 </tr>
                 <tr>
-                    <td>Vcc 10 Droplet 2b</td>
+                    <td>Akun Digital Ocean Vcc 10 Droplets 2b</td>
                     <td>Rp 150.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>
+                    <td><button class="buy-btn" onclick="openQRIS('150.000')">Beli Sekarang</button></td>
                 </tr>
-                <tr>
-                    <td>Pp/Paypal 3 Droplets 2b </td>
+                 <tr>
+                    <td>Akun Digital Ocean PP 3 Droplets 2b</td>
                     <td>Rp 120.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>
+                    <td><button class="buy-btn" onclick="openQRIS('10.000')">Beli Sekarang</button></td>
                 </tr>
             </table>
         </div>
-    </section>
-    
-    <section id="pricelist">
-        <div class="container">
-            <h2>📦 Daftar List Yang Lain 📦</h2>
-            <table>
-                <tr>
-                    <th>Produk</th>
-                    <th>Harga</th>
-                    <th>Aksi</th>               
-                </tr>
-                <tr>
-                    <td>Gmail Fresh</td>
-                    <td>Rp 1.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>                
-                </tr>
-                <tr>
-                    <td>Panel Private</td>
-                    <td>Rp 8.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>                
-                </tr>
-                <tr>
-                    <td>Admin Panel</td>
-                    <td>Rp 15.000</td>
-                    <td><a href="https://wa.me/6283854833221?text=assalamualaikum+ka+mau+order+minta+list+nya+dong" class="buy-btn">Beli Sekarang</a></td>               
-                </tr>     
-            </table>
-        </div>
-    </section>
-    
-    <section id="testimonials">
-        <div class="container">
-            <h2>🌸 Testimoni Pelanggan</h2>
-            <p>Jika Anda Ragu Silahkan Masuk Ke saluran Kami</p>
-            <a href="https://whatsapp.com/channel/0029VaiV7SoJuyA6NhqHuW3D" class="contact-btn">💬 Saluran WhatsApp</a>
-        </div>
-    </section>
 
-    <footer id="contact">
-        <div class="container">
-            <h2>✨ Hubungi Kami ✨</h2>
-            <p>Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin memesan produk!</p>
+        <!-- Tombol Navigasi -->
+        <div id="nav-buttons">
+            <button id="prevBtn" class="nav-btn" onclick="prevPage()" style="display: none;">Sebelumnya</button>
+            <button id="nextBtn" class="nav-btn" onclick="nextPage()">Selanjutnya</button>
+        </div>
+    </div>
+</section>
+       
+<!-- 🔹 Pop-up QRIS -->
+<div id="qris-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
+    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; position: relative;">
+        <h1>Pembayaran QRIS</h1>
+        <p>Silakan scan QRIS untuk membayar</p>
+        <h3 id="qris-amount">Rp 0</h3>
+        <img id="qris-image" src="qris.jpg" alt="QRIS Code" style="width: 200px; height: a; margin-top: 10px;">
+        <p>Sisa waktu pembayaran: <span id="timer">120</span> detik</p>
 
-            <div class="contact-options">
-                <a href="https://wa.me/6281234567890" class="contact-btn">💬 Chat WhatsApp</a>
+        <!-- 🔹 Tombol Download QRIS -->
+        <a id="download-qris" download="qris.png" style="display: block; margin: 10px auto; padding: 8px 15px; background: #007BFF; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; width: fit-content;"> ⬇Download QRIS</a>
+
+        <!-- 🔹 Tombol Kirim Bukti ke WhatsApp -->
+        <button id="send-wa" style="margin-top: 10px; padding: 8px 15px; background: #25d366; color: white; border: none; border-radius: 5px; cursor: pointer;">📤 Kirim Bukti ke WA</button>
+
+        <button onclick="closeQRIS()" style="margin-top: 10px; padding: 8px 15px; background: red; color: white; border: none; border-radius: 5px; cursor: pointer;">Tutup</button>
+    </div>
+</div>
+
+<section id="testimonials">
+        <div class="container">
+            <h1>Apa Kata Pelanggan?</h1>
+            <div class="testimonial">
+                <p>"Produk yang sangat bagus, saya puas dengan kualitasnya!"</p>
+                <p>- Pelanggan 1</p>
             </div>
-
-            <p class="copyright">© 2025 My Website Store | All Rights Reserved</p>
+            <div class="testimonial">
+                <p>"Pelayanan cepat dan ramah, harga sangat bersaing!"</p>
+                <p>- Pelanggan 2</p>
+            </div>
+            <div class="testimonial">
+                <p>"Sangat rekomendasi untuk membeli produk di sini."</p>
+                <p>Faris</p>
+            </div>
         </div>
-    </footer>
-    <script src="script.js"></script>
+    </section>    
+
+ <div class="layar">
+        <h1>✨ GPT Ai ✨</h1>
+        <p>Masukkan teks di bawah ini, dan biarkan GPT Ai menjawab!</p>
+        <textarea id="userInput" placeholder="Ketik sesuatu..."></textarea>
+        <button onclick="getResponse()">🌟 Kirim 🌟</button>
+        <div id="response"></div>
+    </div>
+
+<section id="testimonials">
+    <div class="container">
+        <h1>🌸 Testimoni Pelanggan</h1>
+        <p>Jika Anda Ragu Silahkan Masuk Ke saluran Kami</p>
+        
+        <a href="https://whatsapp.com/channel/0029VaiV7SoJuyA6NhqHuW3D" class="contact-btn">💬 Saluran WhatsApp</a>
+    </div>
+</section>   
+
+<footer id="contact">
+    <div class="container">
+        <h2>✨ Hubungi Kami ✨</h2>
+        <p>Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin memesan produk!</p>
+        <div class="contact-options">
+            <a href="https://wa.me/6281234567890" class="contact-btn">💬 Chat WhatsApp</a>
+        </div>
+        <p class="copyright">© 2025 My Website Store Kyee Host</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
-                    </html>
+</html>
