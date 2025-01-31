@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 🔹 Animasi Loading dengan Delay
     setTimeout(() => {
         document.getElementById('loading').style.opacity = '0';
         setTimeout(() => {
             document.getElementById('loading').style.display = 'none';
-            document.body.classList.add('show-content'); // Menampilkan konten dengan animasi
+            document.body.classList.add('show-content');
         }, 500);
     }, 1500);
 
-    // 🔹 Mode Gelap/Terang
     const toggleThemeBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme');
 
@@ -28,9 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleThemeBtn.innerHTML = '☀ Mode Terang';
         }
     });
-
-    // 🔹 Smooth Scroll untuk Navigasi Menu
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -38,18 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
-    // 🔹 Konfirmasi sebelum Pembelian
-    document.querySelectorAll('.buy-btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (confirm('Apakah Anda yakin ingin membeli produk ini?')) {
-                window.location.href = this.href;
-            }
-        });
-    });
-
-    // 🔹 Validasi Form Kontak
     document.querySelector('form')?.addEventListener('submit', function(e) {
         const name = document.querySelector('input[name="name"]');
         const email = document.querySelector('input[name="email"]');
@@ -61,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 🔹 Efek Fade-in pada Elemen saat Scroll
     const fadeElements = document.querySelectorAll('.fade-in');
     const fadeInOnScroll = () => {
         fadeElements.forEach(el => {
@@ -76,3 +59,99 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', fadeInOnScroll);
     fadeInOnScroll();
 });
+
+function openQRIS(amount) {
+    document.getElementById("qris-amount").innerText = "Rp " + amount;
+    document.getElementById("qris-popup").style.display = "flex";
+
+    let timeLeft = 120;
+    const timer = document.getElementById("timer");
+
+    const countdown = setInterval(function () {
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            closeQRIS();
+        } else {
+            timer.innerText = timeLeft;
+            timeLeft--;
+        }
+    }, 1000);
+
+    const qrisImage = document.getElementById("qris-image").src;
+    document.getElementById("download-qris").href = qrisImage;
+
+    document.getElementById("send-wa").onclick = function() {
+        sendProofToWhatsApp(amount);
+    };
+}
+
+function closeQRIS() {
+    document.getElementById("qris-popup").style.display = "none";
+}
+
+
+function sendProofToWhatsApp(amount) {
+    const phoneNumber = "6283854833221"; // Ganti dengan nomor Wa lu
+    const message = `Halo, saya telah melakukan pembayaran sebesar Rp ${amount} melalui QRIS. Berikut adalah bukti pembayaran saya.`;
+    const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waLink, "_blank");
+}
+
+let currentPage = 1;
+const totalPages = 2; 
+
+function nextPage() {
+    if (currentPage < totalPages) {       
+        document.getElementById('page' + currentPage).style.display = 'none';
+        currentPage++;
+
+        document.getElementById('page' + currentPage).style.display = 'block';
+        
+        if (currentPage === totalPages) {
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+
+document.getElementById('prevBtn').style.display = 'inline-block';
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        
+        document.getElementById('page' + currentPage).style.display = 'none';
+        currentPage--;
+
+       
+        document.getElementById('page' + currentPage).style.display = 'block';
+
+        
+        if (currentPage === 1) {
+            document.getElementById('prevBtn').style.display = 'none';
+        }
+       document.getElementById('nextBtn').style.display = 'inline-block';
+    }
+}
+
+function getResponse() {
+    let userText = document.getElementById("userInput").value;
+    let responseDiv = document.getElementById("response");
+
+    if (userText.trim() === "") {
+        responseDiv.innerHTML = "⚠️ Harap masukkan teks!";
+        responseDiv.style.display = "block";
+        return;
+    }
+
+    responseDiv.innerHTML = "⏳ Sedang memproses...";
+    responseDiv.style.display = "block";
+
+    fetch(`https://website-restapii.vercel.app/luminai?text=${encodeURIComponent(userText)}`)
+        .then(response => response.json())
+        .then(data => {
+            responseDiv.innerHTML = `💬 ${data.message.result || "Tidak ada respons dari server."}`;
+        })
+        .catch(error => {
+            responseDiv.innerHTML = "❌ Terjadi kesalahan. Coba lagi nanti.";
+            console.error("Error:", error);
+        });
+}
